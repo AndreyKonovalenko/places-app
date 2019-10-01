@@ -1,9 +1,10 @@
 import React from 'react';
 
 
-import PlacesNavigator from './navigation/PlacesNavigator'
+import PlacesNavigator from './src/navigation/PlacesNavigator'
 
 export default function App() {
   return (
     <PlacesNavigator />
   );
+}
