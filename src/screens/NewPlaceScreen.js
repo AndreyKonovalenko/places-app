@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, ScrollView, Button } from 'react-native';
-import { useDispatch } from 'react-redux';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+  Button
+} from 'react-native';
+import {useDispatch} from 'react-redux';
 
 import Colors from '../constants/Colors';
 import * as placesActions from '../store/places-actions';
-
 
 const NewPlaceScreen = props => {
   const [titleValue, setTitleValue] = useState('');
@@ -18,15 +24,23 @@ const NewPlaceScreen = props => {
   const savePlaceHandler = () => {
     dispatch(placesActions.addPlace(titleValue));
     props.navigation.goBack();
-  }
+  };
 
   return (
     <ScrollView>
-    <View style={styles.form}>
-      <Text style={styles.label}>Title</Text>
-      <TextInput style={styles.textInput}  onChangeText={titleChangeHandler} value={titleValue}/>
-      <Button  title='Save Place' color={Colors.primary} onPress={savePlaceHandler}/>
-    </View>
+      <View style={styles.form}>
+        <Text style={styles.label}>Title</Text>
+        <TextInput
+          style={styles.textInput}
+          onChangeText={titleChangeHandler}
+          value={titleValue}
+        />
+        <Button
+          title='Save Place'
+          color={Colors.primary}
+          onPress={savePlaceHandler}
+        />
+      </View>
     </ScrollView>
   );
 };
