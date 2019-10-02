@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, ScrollView, Button } from 'react-nat
 import { useDispatch } from 'react-redux';
 
 import Colors from '../constants/Colors';
-import * as placesActions from '../store/places-actons';
+import * as placesActions from '../store/places-actions';
 
 
 const NewPlaceScreen = props => {

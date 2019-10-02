@@ -8,7 +8,7 @@ import placesReducer from './src/store/places-reducer'
 import PlacesNavigator from './src/navigation/PlacesNavigator';
 
 const rootReducer = combineReducers({
-  palces: placesReducer
+  places: placesReducer
 
 })
 
