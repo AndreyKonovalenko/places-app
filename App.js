@@ -3,7 +3,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 import ReduxThunk from 'redux-thunk';
 import placesReducer from './src/store/places-reducer';
-import { init } from '/src/helpers/db';
+import { init } from './src/helpers/db';
 
 
 
