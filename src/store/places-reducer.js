@@ -1,4 +1,4 @@
-import { ADD_PLACE } from './places-actions';
+import { ADD_PLACE, SET_PLACES } from './places-actions';
 import Place from '../models/place';
 
 const initialState = {
@@ -13,6 +13,10 @@ export default (state = initialState, action) => {
         places: state.places.concat(newPlace)
       };
 
+    case SET_PLACES:
+      return {
+        places: action.places.map(element => new Place(element.id.toString(), element.title, element.imageUri))
+      }
     default:
       return state;
   }
