@@ -24,7 +24,7 @@ const MapScreen = props => {
       //could show an alert!
       return;
     }
-    props.navigation.navigate('NewPlace', {pickedLocataion: selectedLocation});
+    props.navigation.navigate('NewPlace', {pickedLocation: selectedLocation});
   }, [selectedLocation]);
 
   useEffect(() => {
