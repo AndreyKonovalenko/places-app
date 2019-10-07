@@ -2,12 +2,12 @@ import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('places.db');
 
-
 export const init = () => {
   const promise = new Promise((resolve, reject) => {
-    db.transaction((tx) => {
+    db.transaction(tx => {
       tx.executeSql(
-        'CREATE TABLE IF NOT EXISTS places (id INTEGER PRIMARY KEY NOT NULL, title TEXT NOT NULL, imageUri TEXT NOT NULL, address TEXT NOT NULL, lat REAL NOT NULL, lng REAL NOT NULL);', [],
+        'CREATE TABLE IF NOT EXISTS places (id INTEGER PRIMARY KEY NOT NULL, title TEXT NOT NULL, imageUri TEXT NOT NULL, address TEXT NOT NULL, lat REAL NOT NULL, lng REAL NOT NULL);',
+        [],
         () => {
           // if success case
           resolve();
@@ -23,9 +23,10 @@ export const init = () => {
 
 export const insertPlace = (title, imageUri, address, lat, lng) => {
   const promise = new Promise((resolve, reject) => {
-    db.transaction((tx) => {
+    db.transaction(tx => {
       tx.executeSql(
-        'INSERT INTO places (title, imageUri, address, lat, lng) VALUES (?, ?, ?, ?, ?);', [title, imageUri, address, lat, lng],
+        'INSERT INTO places (title, imageUri, address, lat, lng) VALUES (?, ?, ?, ?, ?);',
+        [title, imageUri, address, lat, lng],
         (_, result) => {
           // if success case
           resolve(result);
@@ -41,9 +42,10 @@ export const insertPlace = (title, imageUri, address, lat, lng) => {
 
 export const fetchPlaces = () => {
   const promise = new Promise((resolve, reject) => {
-    db.transaction((tx) => {
+    db.transaction(tx => {
       tx.executeSql(
-        'SELECT * FROM places', [],
+        'SELECT * FROM places',
+        [],
         (_, result) => {
           // if success case
           resolve(result);
@@ -55,4 +57,4 @@ export const fetchPlaces = () => {
     });
   });
   return promise;
-}
+};
