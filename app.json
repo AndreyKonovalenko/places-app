@@ -28,8 +28,10 @@
       "supportsTablet": true
     },
     "android": {
-      "foregorundImage": "./assets/places-adaptive.png",
-      "backgroundColor": "#171717"
+      "adaptiveIcon": {
+        "foregorundImage": "./assets/places-adaptive.png",
+        "backgroundColor": "#171717"
+      }
     }
   }
 }
