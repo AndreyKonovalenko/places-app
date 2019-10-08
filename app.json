@@ -25,9 +25,13 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "io.aktech.places-app",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "io.aktech.places_app",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/places-adaptive.png",
         "backgroundColor": "#171717"
